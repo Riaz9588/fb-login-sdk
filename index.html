@@ -7,9 +7,6 @@
     <title>Document</title>
 
 
-
-
-
     <script>
         !(function (f, b, e, v, n, t, s) {
             if (f.fbq) return;
@@ -66,12 +63,7 @@
 
         // Facebook Login with JavaScript SDK
         function launchWhatsAppSignup() {
-            // Conversion tracking code
-            fbq &&
-                fbq("trackCustom", "WhatsAppOnboardingStart", {
-                    appId: "4517112411744561",
-                    // feature: "whatsapp_embedded_signup"
-                });
+        
 
             // Launch Facebook login
             FB.login(
@@ -102,6 +94,24 @@
 
 <body>
     <button onclick="launchWhatsAppSignup()">Launch Signup</button>
+    
+    <script>
+        (function () {
+          var BASE_URL = "https://chatbot.fssywp.easypanel.host";
+          var script = document.createElement("script");
+          script.src = BASE_URL + "/web.js";
+          script.type = "module";
+          document.body.appendChild(script);
+          script.onload = function () {
+            window.fluentSDK.run({
+              inboxId: 588,
+              token: "98960757-dfb3-46da-bab4-a3cc5fb32c43",
+              baseUrl: BASE_URL,
+            });
+          };
+        })();
+      </script>
+      
 </body>
 
 </html>
